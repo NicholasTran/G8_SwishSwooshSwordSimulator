@@ -15,10 +15,7 @@ Swish Swoosh Sword Simulator is an interactive and fun game that uses motion con
 Below are all the directories within the repository and descriptions of the directories and any 
 
 G8_SwishSwooshSwordSimulator
-┣ docs                                      # Project documentations
-┃ ┣ Report.pdf                              #
-┃ ┣ Presentation.pdf                        #
-┃ ┣ Video.mp4                               #
+
 
 ## Authors
 Gavin Gu, Harry Hopman, Nick Tran, Samuel Zheng
