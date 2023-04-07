@@ -12,7 +12,7 @@ Swish Swoosh Sword Simulator is an interactive and fun game that uses motion con
 6. From the SDK, program and run the c program
 
 ## Repository Structure
-Below are all the directories within the repository and descriptions of the directories and any 
+Below are all the directories within the repository and descriptions of the directories and any notable files within them.
 
 G8_SwishSwooshSwordSimulator
 
