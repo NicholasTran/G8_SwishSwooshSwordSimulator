@@ -14,11 +14,11 @@ Swish Swoosh Sword Simulator is an interactive and fun game that uses motion con
 ## Repository Structure
 Below are all the directories within the repository and descriptions of the directories and any notable files within them.
 
-G8_SwishSwooshSwordSimulator
-.
+G8_SwishSwooshSwordSimulator\
+.\
 ├── docs\
-│   ├── Presentation.pdf
-│   └── Final_Report.pdf          
+│   ├── Presentation.pdf\
+│   └── Final_Report.pdf\         
 ├── images
 └── src\
     ├── ip_repo/
