@@ -15,10 +15,10 @@ Swish Swoosh Sword Simulator is an interactive and fun game that uses motion con
 Below are all the directories within the repository and descriptions of the directories and any notable files within them.
 
 ### G8_SwishSwooshSwordSimulator
-.
-├── docs/
-│   ├── Presentation.pdf
-│   └── Final_Report.pdf          
+    .
+    ├── docs/
+    │   ├── Presentation.pdf
+    │   └── Final_Report.pdf          
 ├── images
 └── src/
     ├── ip_repo/
@@ -50,6 +50,14 @@ Below are all the directories within the repository and descriptions of the dire
     │   ├── mid_demo.tmp
     │   └── mid_demo.xpr
     └── vivado-library-hotfix-PmodOLED_RGB
+    .
+    ├── build                   # Compiled files
+    ├── docs                    # Documentation files 
+    │
+    ├── src                     # Source files 
+    ├── test                    # Automated tests
+    ├── tools                   # Tools and utilities
+    └── README.md
 
 ## Authors
 Gavin Gu, Harry Hopman, Nick Tran, Samuel Zheng
