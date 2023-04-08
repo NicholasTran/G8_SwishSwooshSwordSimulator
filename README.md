@@ -19,44 +19,37 @@ Below are all the directories within the repository and descriptions of the dire
     ├── docs/
     │   ├── Presentation.pdf
     │   └── Final_Report.pdf          
-├── images
-└── src/
-    ├── ip_repo/
-    │   ├── audio_axi_slave_1.0
-    │   └── kb_slave_1.0
-    ├── mid_demo/
-    │   ├── mid_demo.cache
-    │   ├── mid_demo.hw
-    │   ├── mid_demo.ip_user_files
-    │   ├── mid_demo.runs
-    │   ├── mid_demo.sdk/
-    │   │   ├── RemoteSystemsTempFiles
-    │   │   ├── main/
-    │   │   │   └── src/
-    │   │   │       ├── colors.h
-    │   │   │       ├── draw_tools.c
-    │   │   │       ├── draw_tools.h
-    │   │   │       ├── helloworld.c
-    │   │   │       ├── lscript.ld
-    │   │   │       ├── platform.c
-    │   │   │       ├── platform.h
-    │   │   │       └── platform_config.h
-    │   │   ├── main_bsp/
-    │   │   │   ├── Makefile
-    │   │   │   └── system.mss
-    │   │   ├── mid_project_wrapper_hw_platform_1
-    │   │   └── mid_project_wrapper.hdf      
-    │   ├── mid_demo.srcs
-    │   ├── mid_demo.tmp
-    │   └── mid_demo.xpr
-    └── vivado-library-hotfix-PmodOLED_RGB
-    .
-    ├── build                   # Compiled files
-    ├── docs                    # Documentation files 
-    │
-    ├── src                     # Source files 
-    ├── test                    # Automated tests
-    ├── tools                   # Tools and utilities
+    ├── images
+    ├── src/
+    │   ├── ip_repo/
+    │   │   ├── audio_axi_slave_1.0
+    │   │   └── kb_slave_1.0
+    │   ├── mid_demo/
+    │   │   ├── mid_demo.cache
+    │   │   ├── mid_demo.hw
+    │   │   ├── mid_demo.ip_user_files
+    │   │   ├── mid_demo.runs
+    │   │   ├── mid_demo.sdk/
+    │   │   │   ├── RemoteSystemsTempFiles
+    │   │   │   ├── main/
+    │   │   │   │   └── src/
+    │   │   │   │       ├── colors.h
+    │   │   │   │       ├── draw_tools.c
+    │   │   │   │       ├── draw_tools.h
+    │   │   │   │       ├── helloworld.c
+    │   │   │   │       ├── lscript.ld
+    │   │   │   │       ├── platform.c
+    │   │   │   │       ├── platform.h
+    │   │   │   │       └── platform_config.h
+    │   │   │   ├── main_bsp/
+    │   │   │   │   ├── Makefile
+    │   │   │   │   └── system.mss
+    │   │   │   ├── mid_project_wrapper_hw_platform_1
+    │   │   │   └── mid_project_wrapper.hdf      
+    │   │   ├── mid_demo.srcs
+    │   │   ├── mid_demo.tmp
+    │   │   └── mid_demo.xpr
+    │   └── vivado-library-hotfix-PmodOLED_RGB
     └── README.md
 
 ## Authors
