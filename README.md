@@ -15,13 +15,19 @@ Swish Swoosh Sword Simulator is an interactive and fun game that uses motion con
 Below are all the directories within the repository and descriptions of the directories and any notable files within them.
 
 G8_SwishSwooshSwordSimulator.
-├── build                   # Compiled files (alternatively `dist`)
-├── docs                    # Documentation files (alternatively `doc`)
-├── src                     # Source files (alternatively `lib` or `app`)
-├── test                    # Automated tests (alternatively `spec` or `tests`)
-├── tools                   # Tools and utilities
-├── LICENSE
-└── README.md
+### A typical top-level directory layout
+
+    .
+    ├── build                   # Compiled files (alternatively `dist`)
+    ├── docs                    # Documentation files (alternatively `doc`)
+    ├── src                     # Source files (alternatively `lib` or `app`)
+    ├── test                    # Automated tests (alternatively `spec` or `tests`)
+    ├── tools                   # Tools and utilities
+    ├── LICENSE
+    └── README.md
+
+> Use short lowercase names at least for the top-level files and folders except
+> `LICENSE`, `README.md`
 
 ## Authors
 Gavin Gu, Harry Hopman, Nick Tran, Samuel Zheng
