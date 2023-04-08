@@ -1,0 +1,698 @@
+/******************************************************************************/
+/*                                                                            */
+/* main.c -- Demo for the PmodNAV using SPI and UART                          */
+/*                                                                            */
+/******************************************************************************/
+/* Author: Samuel Lowe, Arthur Brown                                          */
+/* Copyright 2016, Digilent Inc.                                              */
+/******************************************************************************/
+/*
+  This library is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public
+  License as published by the Free Software Foundation; either
+  version 2.1 of the License, or (at your option) any later version.
+
+  This library is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  Lesser General Public License for more details.
+
+  You should have received a copy of the GNU Lesser General Public
+  License along with this library; if not, write to the Free Software
+  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+*/
+/******************************************************************************/
+/* File Description:                                                          */
+/*                                                                            */
+/* This file contains a demo to be used with the PmodNAV. Accelerometer,      */
+/* Magnetometer, Temperature, and Barometric Pressure data is captured over a */
+/* SPI interface and displayed over UART.                                     */
+/*                                                                            */
+/* This application configures UART 16550 to baud rate 9600.                  */
+/* PS7 UART (Zynq) is not initialized by this application, since bootrom/bsp  */
+/* configures it to baud rate 115200                                          */
+/*                                                                            */
+/*  ------------------------------------------------                          */
+/*  | UART TYPE   BAUD RATE                        |                          */
+/*  ------------------------------------------------                          */
+/*    Uartns550   9600                                                        */
+/*    Uartlite    Configurable only in HW design                              */
+/*    ps7_uart    115200 (configured by bootrom/bsp)                          */
+/*                                                                            */
+/******************************************************************************/
+/* Revision History:                                                          */
+/*                                                                            */
+/*    11/16/2016(SamL):     Created                                           */
+/*    03/16/2017(ArtVVB):   Completed & Validated                             */
+/*    11/01/2017(ArtVVB):   2016.4 Maintenance                                */
+/*    02/20/2018(atangzwj): Validated for Vivado 2017.4                       */
+/*                                                                            */
+/******************************************************************************/
+/* Problems:                                                                  */
+/*                                                                            */
+/* In order to include "math.h" you must include m in compiler settings.      */
+/* See https://www.xilinx.com/support/answers/52971.html                      */
+/*                                                                            */
+/******************************************************************************/
+
+/***************************** Include Files *******************************/
+
+#include <stdio.h>
+#include <stdbool.h>
+#include "platform.h"
+#include "math.h"
+#include "PmodNAV.h"
+#include "sleep.h"
+#include "xil_cache.h"
+#include "xparameters.h"
+#include "xil_printf.h"
+#include "xuartlite_l.h"
+
+//our libraries
+#include "draw_tools.h"
+
+#define BLOCK_THRESHOLD 25.0
+#define SLASH_THRESHOLD 2.5//3.5
+#define PLAYER_ACTION_PERIOD 100
+#define BLOCK_LENGTH 3
+#define PARRY_WINDOW 5
+#define FREE_HIT_LENGTH 10
+
+// For BT-2 Communication
+// base address of uart conencted to bluetooth
+#define BT_BASEADDRESS 0x40610000
+#define STD_BASEADDRESS 0x40600000
+#define ECHO_MODE 0
+
+//Sound
+#define SFX_MENU	 	0b0001
+#define SFX_GOOD 		0b0010
+#define SFX_BAD 		0b0100
+#define SFX_WIN 		0b1000
+
+//gamestates
+#define STATE_MENU				0
+#define STATE_DRAW_PROMPT		1
+#define STATE_WAIT_FOR_ACTION	2
+#define STATE_DRAW_RESULT		3
+#define STATE_FREE_HIT			4
+#define	STATE_GAME_OVER			5
+#define STATE_GAME_WIN			6
+
+//Keycodes
+#define KB_MODE_1	0xf016
+#define KB_MODE_2	0xf01e
+#define KB_RESTART	0xf02d
+#define KB_EXIT		0xf076
+
+/*************************** Global Variables ******************************/
+
+PmodNAV nav;
+
+/********************* Function Forward Declarations ***********************/
+
+void NavDemo_Initialize(void);
+void NavDemo_Run(void);
+void NavDemo_Cleanup(void);
+
+void NavDemo_EnableCaches(void);
+void NavDemo_DisableCaches(void);
+
+/***************************** New Functions ************************/
+float degreesFromVerticalBlock(NAV_RectCoord r) {
+   // Determine the magnitude of the vector r.
+   float rM = sqrtf(powf(r.X, 2) + powf(r.Y, 2) + powf(r.Z, 2));
+   if (rM == 0)
+      return 0.0;
+   return acosf(r.X / rM) * (180.0 / M_PI);
+}
+
+float degreesFromHorizontalBlock(NAV_RectCoord r) {
+   // Determine the magnitude of the vector r.
+   float rM = sqrtf(powf(r.X, 2) + powf(r.Y, 2) + powf(r.Z, 2));
+   if (rM == 0)
+      return 0.0;
+   return acosf(-r.Z / rM) * (180.0 / M_PI);
+}
+
+void calculateBlock(NAV_RectCoord r, float* degFromVertBlock, float* degFromHorizBlock)
+{
+   float rM = sqrtf(powf(r.X, 2) + powf(r.Y, 2) + powf(r.Z, 2));
+	if (rM == 0)
+	{
+		*degFromVertBlock = 0;
+		*degFromHorizBlock = 0;
+		return;
+	}
+	*degFromVertBlock = acosf(r.X / rM) * (180.0 / M_PI);
+	*degFromHorizBlock = acosf(-r.Z / rM) * (180.0 / M_PI);
+	return;
+}
+
+// For BT-2 Communication
+void outbyte_bt(char c) {
+	 XUartLite_SendByte(BT_BASEADDRESS, c);
+}
+
+void print_bt(const char8 *ptr)
+{
+#ifdef BT_BASEADDRESS
+  while (*ptr != (char8)0) {
+    outbyte_bt (*ptr);
+	*ptr++;
+  }
+#else
+(void)ptr;
+#endif
+}
+
+/***************************** Function Definitions ************************/
+
+int main(void) {
+   init_platform();
+   print("Initiating Bluetooth Connection to Arduino\n\r");
+   NavDemo_Initialize();
+   NavDemo_Run();
+   NavDemo_Cleanup();
+
+   cleanup_platform();
+   return 0;
+}
+
+/*** void NavDemo_Initialize()
+**
+**   Parameters:
+**      None
+**
+**   Return Values:
+**      None
+**
+**   Errors:
+**      None
+**
+**   Description:
+**      This function initializes the hardware used in the demo and starts a
+**      PmodNAV driver device
+*/
+void NavDemo_Initialize(void) {
+    NavDemo_EnableCaches();
+    xil_printf("Pmod Nav Demo Initializing...\n\r");
+    NAV_begin ( // intialize the PmodNAV driver device
+        &nav,
+        XPAR_PMODNAV_0_AXI_LITE_GPIO_BASEADDR,
+        XPAR_PMODNAV_0_AXI_LITE_SPI_BASEADDR
+    );
+    xil_printf("Pmod Nav Demo Initialized\n\r");
+    NAV_Init(&nav); // initialize the connection with each spi slave
+    NAV_SetRangeXL(&nav, NAV_ACL_PAR_XL_8G);
+}
+
+/*** void NavDemo_Run(void)
+**
+**   Parameters:
+**      None
+**
+**   Return Values:
+**      None
+**
+**   Errors:
+**      None
+**
+**  Description:
+**      This function encapsulates the PmodNAV demo, capturing data from each
+**      part on the PmodNAV and displaying it over a UART connection
+*/
+void NavDemo_Run(void) {
+   float Pref,
+         tempF,
+         dps,
+         magXYd,
+         alt,
+		 degVert,
+		 degHoriz;
+	bool blockVert,
+		 blockHoriz,
+		 slashVert,
+		 slashHoriz;
+    char *str;
+    // Set the known altitude as reference for future measurements of altitude
+    // Uncomment the below line to improve accuracy of the altimeter device by
+    // specifying the known altitude for your current location
+
+
+    int playerHealth = 3;
+    int enemyHealth = 3;
+    int gameState = STATE_MENU;
+    int actionCounter = 0;
+    int waitCounter = 0;
+
+
+   printf("Pmod Nav Demo Started\n\r");
+   //usleep(100000);
+
+   // For BT-2 Communication
+   char user_byte = 0;
+   int toggle = 0;
+   int count = 0;
+   int score = 0;
+   int keyboard = 0;
+   int mask = 65535;
+
+   // Audio
+//
+//#define STATE_MENU				0
+//#define STATE_DRAW_PROMPT		1
+//#define STATE_WAIT_FOR_ACTION	2
+//#define STATE_ACTION_RESULT		3
+//#define	STATE_GAME_OVER			4
+//#define STATE_GAME_WIN			5
+
+   volatile unsigned int* aud_base = (unsigned int*) XPAR_AUDIO_AXI_SLAVE_0_S00_AXI_BASEADDR;
+   volatile unsigned int* kb_base = (unsigned int*) XPAR_KB_SLAVE_0_S00_AXI_BASEADDR;
+
+   	// KB Debug Block
+
+//    printf("Score: %d\n", score);
+//    sleep(1);
+//   	while(1){//
+//   		score++;
+//		*(kb_base+2) = score / 10;
+//		*(kb_base+3) = score % 10;
+//   		printf("Score: %d\n", score);
+//   		sleep(1);
+//   	}
+
+
+	while(1){//
+		switch(gameState)
+		{
+			case STATE_MENU:
+				printf("Welcome!\n");
+				DrawBackground();
+				DrawMenu(0);
+				SwapDrawBuffers();
+				init_tft();
+
+				//DrawMenu();
+				sleep(5);
+				gameState = STATE_DRAW_PROMPT;
+
+				*(aud_base+0) = SFX_MENU;
+				// Poll keyboard
+				while(1){
+					// Key keyboard value
+					*(kb_base+0) = 1;
+					keyboard = *(kb_base+0) & mask;
+					printf("Keyboard Input: %x\n", keyboard);
+					// Regular Mode
+					if (keyboard == KB_MODE_1){
+						playerHealth = 3;
+						enemyHealth = 3;
+						gameState = STATE_DRAW_PROMPT;
+						break;
+					}
+					// Hard (?) Mode
+					else if (keyboard == KB_MODE_2){
+						playerHealth = 1;
+						enemyHealth = 10;
+						gameState = STATE_DRAW_PROMPT;
+						break;
+					}
+
+					// Sleep briefly
+					usleep(1000);
+				}
+				*(aud_base+0) = 0;
+
+				//Erase Menu Items
+				SwapDrawBuffers();
+				DrawRectangle(25, 70, 5*118, 5*54, DEEP_BLUE);
+
+				break;
+
+			case STATE_DRAW_PROMPT:
+				DrawHearts(playerHealth, enemyHealth);
+				DrawEnemy(actionCounter%4);
+				SwapDrawBuffers();
+				DrawHearts(playerHealth, enemyHealth);
+				DrawEnemy(actionCounter%4);
+				SwapDrawBuffers();
+
+				//draw enemy vslash
+				if(actionCounter%4 == 0)
+				{
+					printf("expecting player horz. block\n");
+				}
+				//draw enemy hslash
+				if(actionCounter%4 == 1)
+				{
+					printf("expecting player vert. block\n");
+				}
+				//draw enemy vblock
+				if(actionCounter%4 == 2)
+				{
+					printf("expecting player vert. slash\n");
+				}
+				//draw enemy hblock
+				if(actionCounter%4 == 3)
+				{
+					printf("expecting player horz. slash\n");
+				}
+
+				gameState = STATE_WAIT_FOR_ACTION;
+				break;
+
+			case STATE_WAIT_FOR_ACTION:
+
+				printf("start polling period\n");
+				bool foundCorrectAction = false;
+				waitCounter = 0;
+				int foundBlockAt = -1;
+
+				while(waitCounter < PLAYER_ACTION_PERIOD)
+				{
+					NAV_GetDeviceID(&nav);
+					NAV_GetData(&nav);
+
+					//Draw G-force tracker & enemy
+					DrawGtrack(nav.acclData.X, nav.acclData.Y, nav.acclData.Z);
+					DrawTimer(waitCounter, PLAYER_ACTION_PERIOD);
+
+					SwapDrawBuffers();
+
+
+					//find player hblock
+					if(actionCounter%4 == 0)
+					{
+						degHoriz = degreesFromHorizontalBlock(nav.acclData);
+						blockHoriz = degHoriz < BLOCK_THRESHOLD;
+
+						if(blockHoriz)
+						{
+							if(foundBlockAt < 0)
+							{
+								foundBlockAt = waitCounter;
+							}
+							else if(waitCounter - foundBlockAt > BLOCK_LENGTH)
+							{
+								foundCorrectAction = true;
+								break;
+							}
+						}
+						else {
+							foundBlockAt = -1;
+						}
+
+					}
+					//find player vblock
+					else if(actionCounter%4 == 1)
+					{
+						degVert = degreesFromVerticalBlock(nav.acclData);
+						blockVert = degVert < BLOCK_THRESHOLD;
+
+						if(blockVert)
+						{
+							if(foundBlockAt < 0)
+							{
+								foundBlockAt = waitCounter;
+							}
+							else if(waitCounter - foundBlockAt > BLOCK_LENGTH)
+							{
+								foundCorrectAction = true;
+								break;
+							}
+						}
+						else {
+							foundBlockAt = -1;
+						}
+					}
+					//find player vslash
+					else if(actionCounter%4 == 2)
+					{
+						if(nav.acclData.Z > SLASH_THRESHOLD)
+						{
+							foundCorrectAction = true;
+							break;
+						}
+					}
+					//find player hslash
+					else if(actionCounter%4 == 3)
+					{
+						if(nav.acclData.Y > SLASH_THRESHOLD || nav.acclData.Y < -SLASH_THRESHOLD)
+						{
+							foundCorrectAction = true;
+							break;
+						}
+					}
+
+					waitCounter++;
+				}
+
+				if(foundCorrectAction) {
+	  				*(aud_base+0) = SFX_GOOD;
+					usleep(100000);
+	  				*(aud_base+0) = 0;
+					if(actionCounter%4 == 2 || actionCounter%4 == 3)
+					{
+						enemyHealth--;
+						score += 2;
+					}
+					else
+					{
+						score += 1;
+						if(PLAYER_ACTION_PERIOD - waitCounter <= PARRY_WINDOW)
+						{
+							gameState = STATE_FREE_HIT;
+						}
+					}
+					printf("Score: %d\n", score);
+					*(kb_base+2) = score / 10;
+					*(kb_base+3) = score % 10;
+					printf("Success!\n");
+				}
+				else
+				{
+	  				*(aud_base+0) = SFX_BAD;
+					usleep(100000);
+	  				*(aud_base+0) = 0;
+					if(actionCounter%4 < 2) //enemy slashes
+					{
+						playerHealth--;
+						if(actionCounter%4 == 0)
+						{
+							print_bt("V\n\r");
+						}
+						else
+						{
+							print_bt("H\n\r");
+						}
+
+
+						//determine which one to draw
+						short int temp_action = (actionCounter % 4) + 4;
+						//4 - missed H-block
+						//5 - missed V-block
+						//DrawHearts(playerHealth, enemyHealth);
+						DrawEnemy(temp_action);
+						SwapDrawBuffers();
+						sleep(1);
+					}
+					printf("Missed Action!\n");
+				}
+
+				printf("player: %d, enemy: %d\n", playerHealth, enemyHealth);
+				if(playerHealth <= 0)
+				{
+					gameState = STATE_GAME_OVER;
+				}
+				else if(enemyHealth <=0)
+				{
+					gameState = STATE_GAME_WIN;
+				}
+				else
+				{
+					actionCounter++;
+					gameState = STATE_DRAW_PROMPT;
+				}
+				break;
+
+			case STATE_FREE_HIT:
+				printf("Perfect Parry! You get a free hit!");
+				waitCounter = 0;
+				bool foundSlash = false;
+				while(waitCounter < PLAYER_ACTION_PERIOD)
+				{
+					NAV_GetDeviceID(&nav);
+					NAV_GetData(&nav);
+
+					//Draw G-force tracker & enemy
+					DrawGtrack(nav.acclData.X, nav.acclData.Y, nav.acclData.Z);
+					DrawTimer(waitCounter, PLAYER_ACTION_PERIOD);
+
+					SwapDrawBuffers();
+
+					//find player vslash
+					if(nav.acclData.Z > SLASH_THRESHOLD)
+					{
+						foundSlash = true;
+						break;
+					}
+					//find player hslash
+					else if(actionCounter%4 == 3)
+					if(nav.acclData.Y > SLASH_THRESHOLD || nav.acclData.Y < -SLASH_THRESHOLD)
+					{
+						foundSlash = true;
+						break;
+					}
+
+					waitCounter++;
+				}
+				if(foundSlash)
+				{
+					*(aud_base+0) = SFX_GOOD;
+					usleep(100000);
+					*(aud_base+0) = 0;
+					enemyHealth--;
+					score += 2;
+				}
+				gameState = STATE_DRAW_PROMPT;
+				break;
+
+			case STATE_GAME_OVER:
+				printf("Game Over!\n");
+				DrawLose();
+				SwapDrawBuffers();
+
+				// Poll keyboard
+				while(1){
+					// Key keyboard value
+					*(kb_base+0) = 1;
+					keyboard = *(kb_base+0) & mask;
+					printf("Keyboard Input: %x\n", keyboard);
+
+					// Restart
+					if (keyboard == KB_RESTART) {
+						gameState = STATE_MENU;
+						break;
+					}
+
+					// Quit
+					else if (keyboard == KB_EXIT)
+						return;
+
+					// Sleep briefly
+					usleep(1000);
+				}
+				// return;
+				break;
+
+			case STATE_GAME_WIN:
+				printf("You Win!\n");
+				DrawWin();
+				SwapDrawBuffers();
+				*(aud_base+0) = SFX_WIN;
+				sleep(2);
+				*(aud_base+0) = 0;
+
+				// Poll keyboard
+				while(1){
+					// Key keyboard value
+					*(kb_base+0) = 1;
+					keyboard = *(kb_base+0) & mask;
+					printf("Keyboard Input: %x\n", keyboard);
+
+					// Restart
+					if (keyboard == KB_RESTART) {
+						gameState = STATE_MENU;
+						break;
+					}
+
+					// Quit
+					else if (keyboard == KB_EXIT)
+						return;
+
+					// Sleep briefly
+					usleep(1000);
+				}
+				// return;
+				break;
+
+			default:
+				gameState = STATE_MENU;
+
+		}
+    }
+}
+
+/*** void NavDemo_Cleanup(void)
+**
+**   Parameters:
+**      None
+**
+**   Return Values:
+**      None
+**
+**   Errors:
+**      None
+**
+**   Description:
+**      This function closes the PmodNAV device and ends the demo
+*/
+void NavDemo_Cleanup(void) {
+   NAV_end(&nav);
+   NavDemo_DisableCaches();
+}
+
+
+
+/*** void NavDemo_EnableCaches(void)
+**
+**   Parameters:
+**      None
+**
+**   Return Values:
+**      None
+**
+**   Errors:
+**      None
+**
+**   Description:
+**      This function enables the instruction and/or data caches on
+**      architectures that require them
+*/
+void NavDemo_EnableCaches(void) {
+#ifdef __MICROBLAZE__
+#ifdef XPAR_MICROBLAZE_USE_ICACHE
+   Xil_ICacheEnable();
+#endif
+#ifdef XPAR_MICROBLAZE_USE_DCACHE
+   Xil_DCacheEnable();
+#endif
+#endif
+}
+
+/*** void NavDemo_DisableCaches(void)
+**
+**   Parameters:
+**      None
+**
+**   Return Values:
+**      None
+**
+**   Errors:
+**      None
+**
+**   Description:
+**      This function disables the instruction and/or data caches on
+**      architectures that require them
+*/
+void NavDemo_DisableCaches(void) {
+#ifdef __MICROBLAZE__
+#ifdef XPAR_MICROBLAZE_USE_ICACHE
+   Xil_ICacheDisable();
+#endif
+#ifdef XPAR_MICROBLAZE_USE_DCACHE
+   Xil_DCacheDisable();
+#endif
+#endif
+}

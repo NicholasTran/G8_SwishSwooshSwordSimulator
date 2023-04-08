@@ -1,0 +1,719 @@
+/*
+ * draw_tools.c
+ *
+ *  Created on: Mar 21, 2023
+ *      Author: Sam
+ */
+
+
+/*
+ * draw_tools.c
+ *
+ *  Created on: Mar 2, 2023
+ *      Author: hopmanha
+ */
+#include "draw_tools.h"
+#include <stdlib.h>
+
+
+#define XPAR_MIG_7SERIES_0_BASEADDR_ALT (XPAR_MIG_7SERIES_0_BASEADDR + 0x04000000)
+#define TFT_MASK 0x00000001
+
+#define base_x 275
+#define base_y 230
+#define skelly_width 87
+#define skelly_height 210
+
+volatile unsigned int * tftptr = (unsigned int*) XPAR_AXI_TFT_0_BASEADDR;
+volatile unsigned int * memptr = (unsigned int*) XPAR_MIG_7SERIES_0_BASEADDR;
+volatile unsigned int * memptr_alt = (unsigned int*) XPAR_MIG_7SERIES_0_BASEADDR_ALT;
+
+
+void init_tft() {
+    tftptr[0] = (unsigned int) memptr_alt;
+    tftptr[1] = 0x00000001;
+}
+
+
+void SwapDrawBuffers(){
+	volatile unsigned int * memptr_swp;
+	unsigned int status;
+	memptr_swp = memptr;
+	memptr = memptr_alt;
+	memptr_alt = memptr_swp;
+	init_tft();
+	status = tftptr[2] & TFT_MASK;
+	while (status == 0){
+		status = tftptr[2] & TFT_MASK;
+	}
+}
+
+
+
+int Convert16bppTo24bpp(int color){
+	int true_color;
+
+	int redMask =   0xF800;
+	int greenMask = 0x7C0;
+	int blueMask =  0x3E;
+
+	int r_val = (color & redMask) >> 10;
+	int g_val = (color & greenMask) >> 5;
+	int b_val = (color & blueMask);
+
+
+	int r = r_val | ((color & redMask) >> 15);
+	int g = g_val | ((color & greenMask) >> 10);
+	int b = b_val | ((color & blueMask) >> 5);
+
+	true_color = (r << 18) | (g << 10) | (b << 2);
+	return true_color;
+}
+
+void DrawPixel( int xpos, int ypos, int scale_factor, unsigned int color){
+	int draw_pixel = color & 0x0001;
+	if (draw_pixel){
+		int true_color;
+		true_color = Convert16bppTo24bpp(color);
+		for (int y = ypos; y < ypos+(1*scale_factor); y++){
+				for(int x = xpos; x < xpos+(1*scale_factor); x++){
+		        	memptr[(1024*y) + (x)] = true_color;
+				}
+			}
+	}
+
+}
+
+void DrawLine(int x_0, int x_1, int y_0, int y_1, int scale, int color){
+	int x0 = x_0;
+	int x1 = x_1;
+	int y0 = y_0;
+	int y1 = y_1;
+
+	int is_steep = abs(y1 - y0) > abs (x1 - x0) ? 1 : 0;
+	if (is_steep){
+		//Swap x0,y0
+		int temp = x0;
+		x0 = y0;
+		y0 = temp;
+
+		//Swap x1,y1
+		temp = x1;
+		x1 = y1;
+		y1 = temp;
+	}
+	if (x0 > x1){
+		//Swap x0, x1
+		int temp = x0;
+		x0 = x1;
+		x1 = temp;
+
+		//Swap y0, y1
+		temp = y0;
+		y0 = y1;
+		y1 = temp;
+	}
+
+	int deltax = x1 - x0;
+	int deltay = abs(y1 - y0);
+	int error = -(deltax / 2);
+	int y = y0;
+	int y_step;
+	if (y0 < y1){
+		y_step = 1;
+	}
+	else{
+		y_step = -1;
+	}
+
+	for (int x = x0; x < x1; x++){
+
+		if (is_steep){
+			DrawPixel(y,x,scale,color);
+		}
+		else{
+			DrawPixel(x,y,scale,color);
+		}
+		error = error + deltay;
+
+		if (error >= 0){
+			y = y + y_step;
+			error = error - deltax;
+		}
+	}
+
+}
+
+
+void DrawEnemy(int pstate){
+	int count = 0;
+	int x,y;
+	/*
+	 * Case 0 - Horizontal Block
+	 * Case 1 - Vertical Block
+	 * Case 2 - Vertical Attack
+	 * Case 3 - Horizontal Attack
+	 */
+
+	//Erase Skeleton
+	DrawRectangle(base_x-45, base_y-55, skelly_width+95, 250, DEEP_BLUE);
+	DrawRectangle(base_x-80, base_y-90, 260, 20, DEEP_BLUE);
+
+
+	/*
+	 *Draw Parry Text - will have to adjust erase box
+	 *Add the y and x coordinates
+	 for (y = base_y-100; y < (base_y-100)+(4*5); y+=4) {
+		        for (x = base_x-80; x < (base_x-80)+(4*65); x+=4) {
+				DrawPixel(x,y,4,perfect_parry[count]);
+		        	count +=1;
+		        }
+		    }
+	 */
+
+	//Draw Base Skeleton
+	for (y = base_y; y < base_y + skelly_height; y+=3) {
+		for (x = base_x; x < base_x + skelly_width; x+=3) {
+			DrawPixel(x,y,3,base_skelly[count]);
+			count +=1;
+		}
+	}
+
+	switch(pstate){
+		case 0: //Horizontal Block
+			count = 0;
+			//Draw Right Arm
+			for (y = base_y + 90; y < (base_y+90)+(3*19); y+=3) {
+		        for (x = base_x+70; x < (base_x+70)+(3*8); x+=3) {
+				DrawPixel(x,y,3,skelly_r_arm[count]);
+		        	count +=1;
+		        }
+		    }
+
+			count = 0;
+			//Draw Sword
+			for (y = base_y-52; y < (base_y-52)+(3*48); y+=3) {
+		        for (x = base_x-9; x < (base_x-9)+(3*11); x+=3) {
+				DrawPixel(x,y,3,v_attack_0[count]);
+		        	count +=1;
+		        }
+		    }
+
+			count = 0;
+			//Draw Text
+			for (y = base_y-90; y < (base_y-90)+(4*5); y+=4) {
+		        for (x = base_x-80; x < (base_x-80)+(4*65); x+=4) {
+				DrawPixel(x,y,4,enemy_attacks[count]);
+		        	count +=1;
+		        }
+		    }
+
+
+		break;
+
+		case 1: //Vertical Block
+			count = 0;
+
+			for (y = base_y+55; y < (base_y+55)+(3*31); y+=3) {
+		        for (x = base_x+12; x < (base_x+12)+(3*41); x+=3) {
+				DrawPixel(x,y,3,h_attack_0[count]);
+		        	count +=1;
+		        }
+		    }
+
+			count = 0;
+			//Draw Text
+			for (y = base_y-90; y < (base_y-90)+(4*5); y+=4) {
+		        for (x = base_x-80; x < (base_x-80)+(4*65); x+=4) {
+				DrawPixel(x,y,4,enemy_attacks[count]);
+		        	count +=1;
+		        }
+		    }
+		break;
+
+		case 2:  //Vertical Attack
+			count = 0;
+			//Draw arms
+			//for (y = base_y + 90; y < (base_y+90)+(3*19); y+=3) {
+		    //    for (x = base_x+70; x < (base_x+70)+(3*8); x+=3) {
+			//	DrawPixel(x,y,3,skelly_r_arm[count]);
+		    //    	count +=1;
+		    //    }
+		    //}
+
+			count = 0;
+			//Draw Sword
+			for (y = (base_y+12); y < (base_y+12) + (3*41); y+=3) {
+		        for (x = base_x-10; x < (base_x-10) + (3*29); x+=3) {
+					DrawPixel(x,y,3,skelly_vblock[count]);
+		        	count +=1;
+		        }
+		    }
+
+			count = 0;
+			//Draw Text
+			for (y = base_y-90; y < (base_y-90)+(4*5); y+=4) {
+		        for (x = base_x-70; x < (base_x-70)+(4*58); x+=4) {
+				DrawPixel(x,y,4,enemy_blocks[count]);
+		        	count +=1;
+		        }
+		    }
+		break;
+
+		case 3: //Horizontal Attack
+			count = 0;
+
+			for (y = base_y + 64; y < (base_y+64)+(3*18); y+=3) {
+		        for (x = base_x-19; x < (base_x-19)+(3*43); x+=3) {
+				DrawPixel(x,y,3,skelly_hblock[count]);
+		        	count +=1;
+		        }
+		    }
+
+			count = 0;
+			//Draw Text
+			for (y = base_y-90; y < (base_y-90)+(4*5); y+=4) {
+		        for (x = base_x-70; x < (base_x-70)+(4*58); x+=4) {
+				DrawPixel(x,y,4,enemy_blocks[count]);
+		        	count +=1;
+		        }
+		    }
+
+		break;
+
+		case 4: //Missed H Block
+			count = 0;
+			//Draw Arms
+			for (y = base_y + 90; y < (base_y+90)+(3*19); y+=3) {
+		        for (x = base_x+70; x < (base_x+70)+(3*8); x+=3) {
+				DrawPixel(x,y,3,skelly_r_arm[count]);
+		        	count +=1;
+		        }
+		    }
+
+			//Draw sword
+			count = 0;
+			for (y = base_y + 84; y < (base_y+84)+(3*27); y+=3) {
+		        for (x = base_x+2; x < (base_x+2)+(3*17); x+=3) {
+				DrawPixel(x,y,3,v_attack_1[count]);
+		        	count +=1;
+		        }
+		    }
+		break;
+
+		case 5: //Missed V Block
+			count = 0;
+			//Draw arms
+			for (y = base_y + 90; y < (base_y+90)+(3*19); y+=3) {
+		        for (x = base_x+70; x < (base_x+70)+(3*8); x+=3) {
+				DrawPixel(x,y,3,skelly_r_arm[count]);
+		        	count +=1;
+		        }
+		    }
+
+			count = 0;
+
+			//Draw sword
+			for (y = base_y + 88; y < (base_y+88)+(3*32); y+=3) {
+		        for (x = base_x-42; x < (base_x-42)+(3*38); x+=3) {
+				DrawPixel(x,y,3,h_attack_1[count]);
+		        	count +=1;
+		        }
+		    }
+		break;
+
+		case 6: //Idle animation
+			count = 0;
+			//Draw arms
+			for (y = base_y + 90; y < (base_y+90)+(3*19); y+=3) {
+		        for (x = base_x+70; x < (base_x+70)+(3*8); x+=3) {
+				DrawPixel(x,y,3,skelly_r_arm[count]);
+		        	count +=1;
+		        }
+		    }
+
+			count = 0;
+			for (y = base_y + 90; y < (base_y+90)+(3*19); y+=3) {
+		        for (x = base_x-8; x < (base_x-8)+(3*8); x+=3) {
+				DrawPixel(x,y,3,skelly_l_arm[count]);
+		        	count +=1;
+		        }
+		    }
+
+		break;
+	}
+}
+
+
+void DrawRectangle (int xstart, int ystart, int width, int height, unsigned int color)
+{
+    int x,y;
+    for (y = ystart; y < (ystart + height); y++) {
+        for (x = xstart; x < (xstart + width); x++) {
+			DrawPixel(x,y,1,color);
+        }
+    }
+}
+
+
+void DrawBackground(){
+      DrawRectangle(0,0,640,480, DEEP_BLUE);
+	//memptr = (unsigned int*) XPAR_MIG_7SERIES_0_BASEADDR_ALT;
+	//DrawRectangle(0,0,640,480, DEEP_BLUE);
+	//memptr = (unsigned int*) XPAR_MIG_7SERIES_0_BASEADDR;
+
+}
+
+void DrawMenu(){
+//Drawing menu items
+	int count = 0;
+	int scale = 5;
+	int x,y;
+	for (y = 70; y < (70)+(scale*54); y+=scale) {
+        for (x = 25; x < (25)+(scale*118); x+=scale) {
+		DrawPixel(x,y,scale,menu[count]);
+        	count +=1;
+        }
+    }
+
+}
+
+void DrawWin(){
+//Drawing Win items
+	DrawRectangle(0,0,640,480,DEEP_BLUE);
+
+	//Draw Text
+	int count = 0;
+	int scale = 5;
+	int x,y;
+	for (y = 80; y < (80)+(scale*60); y+=scale) {
+        for (x = 180; x < (180)+(scale*55); x+=scale) {
+		DrawPixel(x,y,scale,win[count]);
+        	count +=1;
+        }
+    }
+
+
+}
+
+void DrawLose(){
+//Draw Lose items
+	DrawRectangle(0,0,640,480,DEEP_BLUE);
+
+	//Draw Text
+	int count = 0;
+	int scale = 5;
+	int x,y;
+	for (y = 80; y < (80)+(scale*56); y+=scale) {
+        for (x = 200; x < (200)+(scale*52); x+=scale) {
+		DrawPixel(x,y,scale,lose[count]);
+        	count +=1;
+        }
+    }
+
+}
+
+void DrawGtrack(float x_data, float y_data, float z_data){
+	//First erase the previous column
+	DrawRectangle(10,100,35,350,0xbe33);
+	DrawLine(5,45, 280+(19*2.5), 280+(19*2.5), 3, BLACK);
+	DrawLine(5,45, 280-(19*2.5), 280-(19*2.5), 3, BLACK);
+
+	//Draw the new column
+	DrawLine(15,15, 280,280-(19*x_data), 5, RED);
+	DrawLine(25,25, 280,280-(19*y_data), 5, RED);
+	DrawLine(35,35, 280,280-(19*z_data), 5, RED);
+}
+
+void DrawTimer(int counter, int action_period){
+	DrawLine(220,220+2*(action_period), 20, 20, 10, GREEN);
+	DrawLine(220,220+2*(action_period-counter), 20, 20, 10, WHITE);
+
+}
+//void DrawTimer();
+void DrawHearts(int num_player_hearts, int num_enemy_hearts, int hardmode_on){
+	int count = 0;
+    int x,y;
+	//Player Hearts
+    //Heart 1 - (5,7) to (32,34)
+    for (y = 7; y < 34; y=y+3) {
+        for (x = 5; x < 5+27; x=x+3) {
+        	DrawPixel(x,y, 3, small_hearts[count]);
+        	count +=1;
+        }
+    }
+    //Heart 2 - (35,7) to (62,34)
+    count = 0;
+    for (y = 7; y < 34; y+=3) {
+        for (x = 35 ; x < 62; x+=3) {
+        	if (num_player_hearts < 2){
+        		if(small_hearts[count] == 0xf801){
+                	DrawPixel(x,y, 3, small_hearts[count] & 0x3801);
+            		count += 1;
+        		}
+        		else{
+                	DrawPixel(x,y, 3, small_hearts[count]);
+            		count +=1;
+        		}
+        	}
+        	else{
+            	DrawPixel(x,y, 3, small_hearts[count]);
+        		count +=1;
+        	}
+        }
+    }
+
+    //Heart 3 - (65,7) to (92, 34)
+    count = 0;
+    for (y = 7; y < 34; y+=3) {
+        for (x = 65; x < 92; x+=3) {
+        	if (num_player_hearts < 3){
+        		if(small_hearts[count] == 0xf801){
+                	DrawPixel(x,y, 3, small_hearts[count] & 0x3801);
+            		count += 1;
+        		}
+        		else{
+                	DrawPixel(x,y, 3, small_hearts[count]);
+            		count +=1;
+        		}
+        	}
+        	else{
+            	DrawPixel(x,y, 3, small_hearts[count]);
+        		count +=1;
+        	}
+        }
+    }
+
+
+    if (hardmode_on){
+    	//Enemy Hearts
+        //Heart 9 - - (548,7) to (575, 34)
+        count = 0;
+        for (y = 7; y < 34; y+=3) {
+            for (x = 548; x < 575; x+=3) {
+            	if (num_enemy_hearts < 9){
+
+            		if(small_hearts[count] == 0xf801){
+
+                    	DrawPixel(x,y, 3, small_hearts[count] & 0x3801);
+                		count += 1;
+            		}
+            		else{
+                    	DrawPixel(x,y, 3, small_hearts[count]);
+                		count +=1;
+            		}
+            	}
+            	else{
+                	DrawPixel(x,y, 3, small_hearts[count]);
+            		count +=1;
+            	}
+            }
+        }
+        //Heart 8 - (578,7) to (605,34)
+        count = 0;
+        for (y = 7; y < 34; y+=3) {
+            for (x = 578 ; x < 605; x+=3) {
+            	if (num_enemy_hearts < 8){
+            		if(small_hearts[count] == 0xf801){
+                    	DrawPixel(x,y, 3, small_hearts[count] & 0x3801);
+                		count += 1;
+            		}
+            		else{
+                    	DrawPixel(x,y, 3, small_hearts[count]);
+                		count +=1;
+            		}
+            	}
+            	else{
+                	DrawPixel(x,y, 3, small_hearts[count]);
+            		count +=1;
+            	}
+            }
+        }
+        //Heart 7 - (548,7) to (575, 34)
+        count = 0;
+        for (y = 7; y < 34; y+=3) {
+            for (x = 608; x < 635; x+=3){
+            	if (num_enemy_hearts < 7){
+            		if(small_hearts[count] == 0xf801){
+                    	DrawPixel(x,y, 3, small_hearts[count] & 0x3801);
+                		count += 1;
+            		}
+            		else{
+                    	DrawPixel(x,y, 3, small_hearts[count]);
+                		count +=1;
+            		}
+            	}
+            	else{
+                	DrawPixel(x,y, 3, small_hearts[count]);
+            		count +=1;
+            	}
+            }
+        }
+        //Heart 6 - (608,7) to (635, 34)
+        count = 0;
+        for (y = 40; y < 67; y+=3) {
+            for (x = 548; x < 575; x+=3) {
+            	if (num_enemy_hearts < 6){
+
+            		if(small_hearts[count] == 0xf801){
+
+                    	DrawPixel(x,y, 3, small_hearts[count] & 0x3801);
+                		count += 1;
+            		}
+            		else{
+                    	DrawPixel(x,y, 3, small_hearts[count]);
+                		count +=1;
+            		}
+            	}
+            	else{
+                	DrawPixel(x,y, 3, small_hearts[count]);
+            		count +=1;
+            	}
+            }
+        }
+        //Heart 5 - (578,7) to (605,34)
+        count = 0;
+        for (y = 40; y < 67; y+=3) {
+            for (x = 578 ; x < 605; x+=3) {
+            	if (num_enemy_hearts < 5){
+            		if(small_hearts[count] == 0xf801){
+                    	DrawPixel(x,y, 3, small_hearts[count] & 0x3801);
+                		count += 1;
+            		}
+            		else{
+                    	DrawPixel(x,y, 3, small_hearts[count]);
+                		count +=1;
+            		}
+            	}
+            	else{
+                	DrawPixel(x,y, 3, small_hearts[count]);
+            		count +=1;
+            	}
+            }
+        }
+        //Heart 4 - (548,7) to (575, 34)
+        count = 0;
+        for (y = 40; y < 67; y+=3) {
+            for (x = 608; x < 635; x+=3){
+            	if (num_enemy_hearts < 4){
+            		if(small_hearts[count] == 0xf801){
+                    	DrawPixel(x,y, 3, small_hearts[count] & 0x3801);
+                		count += 1;
+            		}
+            		else{
+                    	DrawPixel(x,y, 3, small_hearts[count]);
+                		count +=1;
+            		}
+            	}
+            	else{
+                	DrawPixel(x,y, 3, small_hearts[count]);
+            		count +=1;
+            	}
+            }
+        }
+        //Heart 3 - (548,7) to (575, 34)
+        count = 0;
+        for (y = 73; y < 100; y+=3) {
+            for (x = 548; x < 575; x+=3) {
+            	if (num_enemy_hearts < 3){
+
+            		if(small_hearts[count] == 0xf801){
+
+                    	DrawPixel(x,y, 3, small_hearts[count] & 0x3801);
+                		count += 1;
+            		}
+            		else{
+                    	DrawPixel(x,y, 3, small_hearts[count]);
+                		count +=1;
+            		}
+            	}
+            	else{
+                	DrawPixel(x,y, 3, small_hearts[count]);
+            		count +=1;
+            	}
+            }
+        }
+        //Heart 2 - (578,7) to (605,34)
+        count = 0;
+        for (y = 73; y < 100; y+=3) {
+            for (x = 578 ; x < 605; x+=3) {
+            	if (num_enemy_hearts < 2){
+            		if(small_hearts[count] == 0xf801){
+                    	DrawPixel(x,y, 3, small_hearts[count] & 0x3801);
+                		count += 1;
+            		}
+            		else{
+                    	DrawPixel(x,y, 3, small_hearts[count]);
+                		count +=1;
+            		}
+            	}
+            	else{
+                	DrawPixel(x,y, 3, small_hearts[count]);
+            		count +=1;
+            	}
+            }
+        }
+
+        //Heart 1 - (608,7) to (635, 34)
+        count = 0;
+        for (y = 73; y < 100; y+=3) {
+            for (x = 608; x < 635; x+=3){
+            	DrawPixel(x,y, 3, small_hearts[count]);
+            	count +=1;
+            }
+        }
+    }
+    else{
+    	//Enemy Hearts
+        //Heart 1 - (608,7) to (635, 34)
+        count = 0;
+        for (y = 7; y < 34; y+=3) {
+            for (x = 608; x < 635; x+=3){
+            	DrawPixel(x,y, 3, small_hearts[count]);
+            	count +=1;
+            }
+        }
+        //Heart 2 - (578,7) to (605,34)
+        count = 0;
+        for (y = 7; y < 34; y+=3) {
+            for (x = 578 ; x < 605; x+=3) {
+            	if (num_enemy_hearts < 2){
+            		if(small_hearts[count] == 0xf801){
+                    	DrawPixel(x,y, 3, small_hearts[count] & 0x3801);
+                		count += 1;
+            		}
+            		else{
+                    	DrawPixel(x,y, 3, small_hearts[count]);
+                		count +=1;
+            		}
+            	}
+            	else{
+                	DrawPixel(x,y, 3, small_hearts[count]);
+            		count +=1;
+            	}
+            }
+        }
+        //Heart 3 - (548,7) to (575, 34)
+        count = 0;
+        for (y = 7; y < 34; y+=3) {
+            for (x = 548; x < 575; x+=3) {
+            	if (num_enemy_hearts < 3){
+
+            		if(small_hearts[count] == 0xf801){
+
+                    	DrawPixel(x,y, 3, small_hearts[count] & 0x3801);
+                		count += 1;
+            		}
+            		else{
+                    	DrawPixel(x,y, 3, small_hearts[count]);
+                		count +=1;
+            		}
+            	}
+            	else{
+                	DrawPixel(x,y, 3, small_hearts[count]);
+            		count +=1;
+            	}
+            }
+        }
+    }
+}

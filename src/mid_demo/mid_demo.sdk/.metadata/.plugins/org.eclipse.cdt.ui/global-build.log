@@ -1,0 +1,2789 @@
+14:36:39 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+../../main_bsp/microblaze_0/lib\libc.a(lib_a-gettimeofdayr.o): In function `_gettimeofday_r':
+(.text+0x2c): undefined reference to `gettimeofday'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:38: main.elf] Error 1
+14:37:13 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:66:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:63:0:
+c:\desl\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:164:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:174:10: warning: implicit declaration of function 'time'; did you mean 'true'? [-Wimplicit-function-declaration]
+    srand(time(NULL));
+          ^~~~
+          true
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:252:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:251:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:250:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+../../main_bsp/microblaze_0/lib\libc.a(lib_a-gettimeofdayr.o): In function `_gettimeofday_r':
+(.text+0x2c): undefined reference to `gettimeofday'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:38: main.elf] Error 1
+14:37:55 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:66:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:63:0:
+c:\desl\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:164:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:252:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:251:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:250:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+../../main_bsp/microblaze_0/lib\libc.a(lib_a-gettimeofdayr.o): In function `_gettimeofday_r':
+(.text+0x2c): undefined reference to `gettimeofday'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:38: main.elf] Error 1
+14:39:00 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:66:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:63:0:
+c:\desl\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:164:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:252:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:251:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:250:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 180832	   1540	   3356	 185728	  2d580	main.elf
+'Finished building: main.elf.size'
+' '
+14:39:12 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:66:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:63:0:
+c:\desl\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:164:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:252:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:251:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:250:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+../../main_bsp/microblaze_0/lib\libc.a(lib_a-gettimeofdayr.o): In function `_gettimeofday_r':
+(.text+0x2c): undefined reference to `gettimeofday'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:38: main.elf] Error 1
+14:40:58 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:66:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:63:0:
+c:\desl\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:164:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:234:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+../../main_bsp/microblaze_0/lib\libc.a(lib_a-gettimeofdayr.o): In function `_gettimeofday_r':
+(.text+0x2c): undefined reference to `gettimeofday'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:38: main.elf] Error 1
+14:41:08 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:66:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:63:0:
+c:\desl\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:164:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:175:21: warning: implicit declaration of function 'time'; did you mean 'true'? [-Wimplicit-function-declaration]
+    srand((unsigned) time(&t));
+                     ^~~~
+                     true
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:234:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+../../main_bsp/microblaze_0/lib\libc.a(lib_a-gettimeofdayr.o): In function `_gettimeofday_r':
+(.text+0x2c): undefined reference to `gettimeofday'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:38: main.elf] Error 1
+14:41:51 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:66:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:63:0:
+c:\desl\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:164:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:234:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+../../main_bsp/microblaze_0/lib\libc.a(lib_a-gettimeofdayr.o): In function `_gettimeofday_r':
+(.text+0x2c): undefined reference to `gettimeofday'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:38: main.elf] Error 1
+14:46:03 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\desl\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:163:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:174:21: warning: implicit declaration of function 'time'; did you mean 'true'? [-Wimplicit-function-declaration]
+    srand((unsigned) time(&t));
+                     ^~~~
+                     true
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:252:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:251:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:250:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+../../main_bsp/microblaze_0/lib\libc.a(lib_a-gettimeofdayr.o): In function `_gettimeofday_r':
+(.text+0x2c): undefined reference to `gettimeofday'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:38: main.elf] Error 1
+14:46:18 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\desl\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:163:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:250:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:249:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:248:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:231:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 180844	   1540	   3360	 185744	  2d590	main.elf
+'Finished building: main.elf.size'
+' '
+14:47:18 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\desl\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:163:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:250:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:249:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:248:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:231:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 180884	   1540	   3360	 185784	  2d5b8	main.elf
+'Finished building: main.elf.size'
+' '
+14:47:57 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+15:35:12 **** Build of project main_bsp ****
+make -k all 
+"Running Make include in microblaze_0/libsrc/audio_axi_slave_v1_0/src"
+make -C microblaze_0/libsrc/audio_axi_slave_v1_0/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/bram_v4_2/src"
+make -C microblaze_0/libsrc/bram_v4_2/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/cpu_v2_8/src"
+make -C microblaze_0/libsrc/cpu_v2_8/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/intc_v3_8/src"
+make -C microblaze_0/libsrc/intc_v3_8/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/kb_slave_v1_0/src"
+make -C microblaze_0/libsrc/kb_slave_v1_0/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/PmodNAV_v1_0/src"
+make -C microblaze_0/libsrc/PmodNAV_v1_0/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/standalone_v6_8/src"
+make -C microblaze_0/libsrc/standalone_v6_8/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/tft_v6_1/src"
+make -C microblaze_0/libsrc/tft_v6_1/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/uartlite_v3_2/src"
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make libs in microblaze_0/libsrc/audio_axi_slave_v1_0/src"
+make -C microblaze_0/libsrc/audio_axi_slave_v1_0/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling audio_axi_slave..."
+audio_axi_slave_selftest.c: In function 'AUDIO_AXI_SLAVE_Reg_SelfTest':
+audio_axi_slave_selftest.c:52:64: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( AUDIO_AXI_SLAVE_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                                ^~
+audio_axi_slave_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+"Running Make libs in microblaze_0/libsrc/bram_v4_2/src"
+make -C microblaze_0/libsrc/bram_v4_2/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling bram"
+"Running Make libs in microblaze_0/libsrc/cpu_v2_8/src"
+make -C microblaze_0/libsrc/cpu_v2_8/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling cpu"
+"Running Make libs in microblaze_0/libsrc/intc_v3_8/src"
+make -C microblaze_0/libsrc/intc_v3_8/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling intc"
+"Running Make libs in microblaze_0/libsrc/kb_slave_v1_0/src"
+make -C microblaze_0/libsrc/kb_slave_v1_0/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling kb_slave..."
+kb_slave_selftest.c: In function 'KB_SLAVE_Reg_SelfTest':
+kb_slave_selftest.c:52:57: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( KB_SLAVE_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                         ^~
+kb_slave_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+"Running Make libs in microblaze_0/libsrc/PmodNAV_v1_0/src"
+make -C microblaze_0/libsrc/PmodNAV_v1_0/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling PmodNAV..."
+PmodNAV.c: In function 'NAV_GetODRRaw':
+PmodNAV.c:2289:11: warning: 'getODR' may be used uninitialized in this function [-Wmaybe-uninitialized]
+    return getODR;
+           ^~~~~~
+PmodNAV.c: In function 'NAV_GetFIFOMode':
+PmodNAV.c:2616:11: warning: 'getFIFO' may be used uninitialized in this function [-Wmaybe-uninitialized]
+    return getFIFO;
+           ^~~~~~~
+PmodNAV.c: In function 'NAV_GetFIFOThs':
+PmodNAV.c:2665:11: warning: 'bFifoThs' may be used uninitialized in this function [-Wmaybe-uninitialized]
+    return bFifoThs;
+           ^~~~~~~~
+PmodNAV.c: In function 'NAV_GetFIFOStatus':
+PmodNAV.c:2699:11: warning: 'getFIFOSts' may be used uninitialized in this function [-Wmaybe-uninitialized]
+    return getFIFOSts;
+           ^~~~~~~~~~
+"Running Make libs in microblaze_0/libsrc/standalone_v6_8/src"
+make -C microblaze_0/libsrc/standalone_v6_8/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling standalone";
+microblaze_sleep.c:77:9: note: #pragma message: For the sleep routines, assembly instructions are used
+ #pragma message ("For the sleep routines, assembly instructions are used")
+         ^~~~~~~
+"Running Make libs in microblaze_0/libsrc/tft_v6_1/src"
+make -C microblaze_0/libsrc/tft_v6_1/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling tft"
+"Running Make libs in microblaze_0/libsrc/uartlite_v3_2/src"
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling uartlite"
+'Finished building libraries'
+15:35:40 **** Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:163:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:250:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:249:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:248:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:231:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 180884	   1540	   3360	 185784	  2d5b8	main.elf
+'Finished building: main.elf.size'
+' '
+15:36:20 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+15:55:02 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:252:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:251:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:250:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 180428	   1540	   3360	 185328	  2d3f0	main.elf
+'Finished building: main.elf.size'
+' '
+16:00:37 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:252:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:251:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:250:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 180428	   1540	   3360	 185328	  2d3f0	main.elf
+'Finished building: main.elf.size'
+' '
+16:02:00 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:252:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:251:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:250:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 180428	   1540	   3360	 185328	  2d3f0	main.elf
+'Finished building: main.elf.size'
+' '
+16:12:39 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+../src/draw_tools.c:362:6: error: conflicting types for 'DrawHearts'
+ void DrawHearts(int num_player_hearts, int num_enemy_hearts, int hardmode_on){
+      ^~~~~~~~~~
+In file included from ../src/draw_tools.c:15:0:
+../src/draw_tools.h:25:6: note: previous declaration of 'DrawHearts' was here
+ void DrawHearts(int num_player_hearts, int num_enemy_hearts);
+      ^~~~~~~~~~
+make: *** [src/subdir.mk:29: src/draw_tools.o] Error 1
+16:12:51 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+../src/draw_tools.c:362:6: error: conflicting types for 'DrawHearts'
+ void DrawHearts(int num_player_hearts, int num_enemy_hearts, int hardmode_on){
+      ^~~~~~~~~~
+In file included from ../src/draw_tools.c:15:0:
+../src/draw_tools.h:25:6: note: previous declaration of 'DrawHearts' was here
+ void DrawHearts(int num_player_hearts, int num_enemy_hearts);
+      ^~~~~~~~~~
+make: *** [src/subdir.mk:29: src/draw_tools.o] Error 1
+16:13:31 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 182480	   1540	   3356	 187376	  2dbf0	main.elf
+'Finished building: main.elf.size'
+' '
+16:13:53 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 182484	   1540	   3360	 187384	  2dbf8	main.elf
+'Finished building: main.elf.size'
+' '
+16:15:49 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 182348	   1540	   3360	 187248	  2db70	main.elf
+'Finished building: main.elf.size'
+' '
+16:18:58 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:342:5: error: expected ';' before '}' token
+     }
+     ^
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+make: *** [src/subdir.mk:29: src/helloworld.o] Error 1
+16:19:01 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 182372	   1540	   3360	 187272	  2db88	main.elf
+'Finished building: main.elf.size'
+' '
+16:19:10 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+16:22:13 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 180756	   1540	   3360	 185656	  2d538	main.elf
+'Finished building: main.elf.size'
+' '
+16:28:32 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 181732	   1540	   3360	 186632	  2d908	main.elf
+'Finished building: main.elf.size'
+' '
+16:34:02 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 181732	   1540	   3360	 186632	  2d908	main.elf
+'Finished building: main.elf.size'
+' '
+16:35:56 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 182380	   1540	   3360	 187280	  2db90	main.elf
+'Finished building: main.elf.size'
+' '
+16:36:02 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+16:37:03 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 182380	   1540	   3360	 187280	  2db90	main.elf
+'Finished building: main.elf.size'
+' '
+16:39:45 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 183172	   1540	   3360	 188072	  2dea8	main.elf
+'Finished building: main.elf.size'
+' '
+16:41:09 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 183168	   1540	   3356	 188064	  2dea0	main.elf
+'Finished building: main.elf.size'
+' '
+16:41:55 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 183172	   1540	   3360	 188072	  2dea8	main.elf
+'Finished building: main.elf.size'
+' '
+16:44:03 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+16:46:55 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 183016	   1540	   3356	 187912	  2de08	main.elf
+'Finished building: main.elf.size'
+' '
+16:47:17 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+17:16:25 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+In file included from ../src/draw_tools.h:11:0,
+                 from ../src/draw_tools.c:15:
+../src/colors.h:346:14: error: unknown type name 'byte'
+ static const byte skelly_l_arm[]  = {
+              ^~~~
+make: *** [src/subdir.mk:29: src/draw_tools.o] Error 1
+17:16:47 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 182940	   1540	   3360	 187840	  2ddc0	main.elf
+'Finished building: main.elf.size'
+' '
+17:18:30 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 183472	   1540	   3356	 188368	  2dfd0	main.elf
+'Finished building: main.elf.size'
+' '
+17:19:18 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 183472	   1540	   3356	 188368	  2dfd0	main.elf
+'Finished building: main.elf.size'
+' '
+17:20:04 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 183472	   1540	   3356	 188368	  2dfd0	main.elf
+'Finished building: main.elf.size'
+' '
+17:20:33 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+17:21:44 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 183472	   1540	   3356	 188368	  2dfd0	main.elf
+'Finished building: main.elf.size'
+' '
+17:22:49 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 183472	   1540	   3356	 188368	  2dfd0	main.elf
+'Finished building: main.elf.size'
+' '
+17:23:32 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 183472	   1540	   3356	 188368	  2dfd0	main.elf
+'Finished building: main.elf.size'
+' '
+17:24:09 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 183472	   1540	   3356	 188368	  2dfd0	main.elf
+'Finished building: main.elf.size'
+' '
+17:24:41 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 183624	   1540	   3356	 188520	  2e068	main.elf
+'Finished building: main.elf.size'
+' '
+17:27:00 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 183480	   1540	   3356	 188376	  2dfd8	main.elf
+'Finished building: main.elf.size'
+' '
+17:41:18 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+../src/draw_tools.c: In function 'DrawEnemy':
+../src/draw_tools.c:193:21: error: 'enemy_attacks' undeclared (first use in this function)
+     DrawPixel(x,y,3,enemy_attacks[count]);
+                     ^~~~~~~~~~~~~
+../src/draw_tools.c:193:21: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/subdir.mk:29: src/draw_tools.o] Error 1
+17:41:23 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 184280	   1540	   3356	 189176	  2e2f8	main.elf
+'Finished building: main.elf.size'
+' '
+17:42:40 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+17:44:21 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 184280	   1540	   3356	 189176	  2e2f8	main.elf
+'Finished building: main.elf.size'
+' '
+17:45:35 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 184280	   1540	   3356	 189176	  2e2f8	main.elf
+'Finished building: main.elf.size'
+' '
+17:46:12 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 184280	   1540	   3356	 189176	  2e2f8	main.elf
+'Finished building: main.elf.size'
+' '
+17:46:55 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 184280	   1540	   3356	 189176	  2e2f8	main.elf
+'Finished building: main.elf.size'
+' '
+17:48:06 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 184280	   1540	   3356	 189176	  2e2f8	main.elf
+'Finished building: main.elf.size'
+' '
+17:48:47 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 184280	   1540	   3356	 189176	  2e2f8	main.elf
+'Finished building: main.elf.size'
+' '
+17:49:28 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 184280	   1540	   3356	 189176	  2e2f8	main.elf
+'Finished building: main.elf.size'
+' '
+17:50:09 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 184280	   1540	   3356	 189176	  2e2f8	main.elf
+'Finished building: main.elf.size'
+' '
+17:50:50 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 184280	   1540	   3356	 189176	  2e2f8	main.elf
+'Finished building: main.elf.size'
+' '
+17:52:42 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 184312	   1540	   3356	 189208	  2e318	main.elf
+'Finished building: main.elf.size'
+' '
+17:53:12 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+17:54:00 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 185336	   1540	   3356	 190232	  2e718	main.elf
+'Finished building: main.elf.size'
+' '
+17:54:09 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+17:57:45 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 185336	   1540	   3356	 190232	  2e718	main.elf
+'Finished building: main.elf.size'
+' '
+17:58:06 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 185336	   1540	   3356	 190232	  2e718	main.elf
+'Finished building: main.elf.size'
+' '
+17:58:24 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+17:59:23 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 185336	   1540	   3356	 190232	  2e718	main.elf
+'Finished building: main.elf.size'
+' '
+18:00:53 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 185336	   1540	   3356	 190232	  2e718	main.elf
+'Finished building: main.elf.size'
+' '
+18:01:53 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 185336	   1540	   3356	 190232	  2e718	main.elf
+'Finished building: main.elf.size'
+' '
+18:04:02 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+18:08:21 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:346:4: error: case label not within a switch statement
+    case STATE_DRAW_PROMPT:
+    ^~~~
+../src/helloworld.c:382:4: error: case label not within a switch statement
+    case STATE_WAIT_FOR_ACTION:
+    ^~~~
+../src/helloworld.c:540:4: error: case label not within a switch statement
+    case STATE_FREE_HIT:
+    ^~~~
+../src/helloworld.c:582:4: error: case label not within a switch statement
+    case STATE_GAME_OVER:
+    ^~~~
+../src/helloworld.c:613:4: error: case label not within a switch statement
+    case STATE_GAME_WIN:
+    ^~~~
+../src/helloworld.c:646:4: error: 'default' label not within a switch statement
+    default:
+    ^~~~~~~
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:651:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+make: *** [src/subdir.mk:29: src/helloworld.o] Error 1
+18:08:34 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 185336	   1540	   3356	 190232	  2e718	main.elf
+'Finished building: main.elf.size'
+' '
+18:08:42 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 185312	   1540	   3356	 190208	  2e700	main.elf
+'Finished building: main.elf.size'
+' '
+14:17:58 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+14:19:52 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 185828	   1540	   3360	 190728	  2e908	main.elf
+'Finished building: main.elf.size'
+' '
+14:20:13 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 185852	   1540	   3360	 190752	  2e920	main.elf
+'Finished building: main.elf.size'
+' '
+14:20:27 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+14:21:35 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 185852	   1540	   3360	 190752	  2e920	main.elf
+'Finished building: main.elf.size'
+' '
+14:21:49 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 185852	   1540	   3360	 190752	  2e920	main.elf
+'Finished building: main.elf.size'
+' '
+14:21:55 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+14:27:33 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+14:32:49 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 185852	   1540	   3360	 190752	  2e920	main.elf
+'Finished building: main.elf.size'
+' '
+14:33:11 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 185932	   1540	   3360	 190832	  2e970	main.elf
+'Finished building: main.elf.size'
+' '
+14:33:23 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+14:39:31 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 185952	   1540	   3356	 190848	  2e980	main.elf
+'Finished building: main.elf.size'
+' '
+14:39:38 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+14:40:11 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+14:40:46 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+14:41:32 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+14:42:56 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+14:43:25 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 185952	   1540	   3356	 190848	  2e980	main.elf
+'Finished building: main.elf.size'
+' '
+14:43:32 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+14:45:23 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+14:47:18 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+14:47:54 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+14:49:26 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 185952	   1540	   3356	 190848	  2e980	main.elf
+'Finished building: main.elf.size'
+' '
+14:52:53 **** Incremental Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 185952	   1540	   3356	 190848	  2e980	main.elf
+'Finished building: main.elf.size'
+' '
+14:53:57 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/draw_tools.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/draw_tools.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/draw_tools.d" -MT"src/draw_tools.o" -o "src/draw_tools.o" "../src/draw_tools.c"
+'Finished building: ../src/draw_tools.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 185964	   1540	   3360	 190864	  2e990	main.elf
+'Finished building: main.elf.size'
+' '
+14:54:05 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+15:00:08 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 186032	   1540	   3356	 190928	  2e9d0	main.elf
+'Finished building: main.elf.size'
+' '
+15:00:25 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+15:01:46 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+15:03:13 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+15:09:55 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+15:13:27 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 186008	   1540	   3356	 190904	  2e9b8	main.elf
+'Finished building: main.elf.size'
+' '
+15:13:47 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+15:36:20 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 186008	   1540	   3356	 190904	  2e9b8	main.elf
+'Finished building: main.elf.size'
+' '
+15:36:31 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+15:38:23 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 186000	   1540	   3356	 190896	  2e9b0	main.elf
+'Finished building: main.elf.size'
+' '
+15:39:46 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 186032	   1540	   3356	 190928	  2e9d0	main.elf
+'Finished building: main.elf.size'
+' '
+15:39:56 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+15:47:45 **** Auto Build of configuration Debug for project main ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../main_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:65:0:
+../../main_bsp/microblaze_0/include/PmodNAV.h:52:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../src/helloworld.c:62:0:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\7.3.1\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/helloworld.c: In function 'print_bt':
+../src/helloworld.c:165:2: warning: value computed is not used [-Wunused-value]
+  *ptr++;
+  ^~~~~~
+../src/helloworld.c: In function 'NavDemo_Run':
+../src/helloworld.c:253:8: warning: unused variable 'count' [-Wunused-variable]
+    int count = 0;
+        ^~~~~
+../src/helloworld.c:252:8: warning: unused variable 'toggle' [-Wunused-variable]
+    int toggle = 0;
+        ^~~~~~
+../src/helloworld.c:251:9: warning: unused variable 'user_byte' [-Wunused-variable]
+    char user_byte = 0;
+         ^~~~~~~~~
+../src/helloworld.c:233:11: warning: unused variable 'str' [-Wunused-variable]
+     char *str;
+           ^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: main.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../main_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "main.elf"  ./src/draw_tools.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: main.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size main.elf  |tee "main.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 186016	   1540	   3356	 190912	  2e9c0	main.elf
+'Finished building: main.elf.size'
+' '
+15:47:54 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+13:36:02 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+13:37:32 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+13:42:04 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+14:16:33 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+14:29:45 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.
+14:33:01 **** Incremental Build of configuration Debug for project main ****
+make all 
+make: Nothing to be done for 'all'.

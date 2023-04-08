@@ -1,0 +1,18 @@
+#-----------------------------------------------------------
+# Vivado v2018.3.1 (64-bit)
+# SW Build 2489853 on Tue Mar 26 04:20:25 MDT 2019
+# IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
+# Start of session at: Wed Mar  1 16:32:58 2023
+# Process ID: 8412
+# Current directory: D:/ece532/mid_demo/mid_demo/mid_demo.runs/mid_project_ilmb_v10_0_synth_1
+# Command line: vivado.exe -log mid_project_ilmb_v10_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mid_project_ilmb_v10_0.tcl
+# Log file: D:/ece532/mid_demo/mid_demo/mid_demo.runs/mid_project_ilmb_v10_0_synth_1/mid_project_ilmb_v10_0.vds
+# Journal file: D:/ece532/mid_demo/mid_demo/mid_demo.runs/mid_project_ilmb_v10_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source mid_project_ilmb_v10_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/ece532/mid_demo/vivado-library-hotfix-PmodOLED_RGB'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/DESL/Xilinx/Vivado/2018.3/data/ip'.
+update_ip_catalog: Time (s): cpu = 00:00:03 ; elapsed = 00:00:15 . Memory (MB): peak = 381.785 ; gain = 58.383
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP mid_project_ilmb_v10_0, cache-ID = 59482b72db04efb5.
+INFO: [Common 17-206] Exiting Vivado at Wed Mar  1 16:33:20 2023...

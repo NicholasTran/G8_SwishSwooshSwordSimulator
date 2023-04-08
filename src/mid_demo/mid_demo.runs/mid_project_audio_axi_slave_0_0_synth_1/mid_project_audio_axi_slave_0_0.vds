@@ -1,0 +1,444 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Tue Mar 21 13:54:46 2023
+# Process ID: 15980
+# Current directory: C:/Users/Sam/Desktop/ECE532/mid_demo_v6_timer_gtracker/mid_demo/mid_demo.runs/mid_project_audio_axi_slave_0_0_synth_1
+# Command line: vivado.exe -log mid_project_audio_axi_slave_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mid_project_audio_axi_slave_0_0.tcl
+# Log file: C:/Users/Sam/Desktop/ECE532/mid_demo_v6_timer_gtracker/mid_demo/mid_demo.runs/mid_project_audio_axi_slave_0_0_synth_1/mid_project_audio_axi_slave_0_0.vds
+# Journal file: C:/Users/Sam/Desktop/ECE532/mid_demo_v6_timer_gtracker/mid_demo/mid_demo.runs/mid_project_audio_axi_slave_0_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source mid_project_audio_axi_slave_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Sam/Desktop/ECE532/mid_demo_v6_timer_gtracker/ip_repo/kb_slave_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Sam/Desktop/ECE532/mid_demo_v6_timer_gtracker/ip_repo/audio_core_axi_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Sam/Desktop/ECE532/mid_demo_v6_timer_gtracker/ip_repo/audio_axi_slave_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Sam/Desktop/ECE532/mid_demo_v6_timer_gtracker/vivado-library-hotfix-PmodOLED_RGB'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2018.3/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/Users/Sam/Desktop/ECE532/mid_demo_v6_timer_gtracker/mid_demo/mid_demo.cache/ip 
+Command: synth_design -top mid_project_audio_axi_slave_0_0 -part xc7a100tcsg324-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 11268 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 524.785 ; gain = 103.188
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'mid_project_audio_axi_slave_0_0' [c:/Users/Sam/Desktop/ECE532/mid_demo_v6_timer_gtracker/mid_demo/mid_demo.srcs/sources_1/bd/mid_project/ip/mid_project_audio_axi_slave_0_0/synth/mid_project_audio_axi_slave_0_0.v:56]
+INFO: [Synth 8-6157] synthesizing module 'audio_axi_slave_v1_0' [c:/Users/Sam/Desktop/ECE532/mid_demo_v6_timer_gtracker/mid_demo/mid_demo.srcs/sources_1/bd/mid_project/ipshared/450c/hdl/audio_axi_slave_v1_0.v:4]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'audio_axi_slave_v1_0_S00_AXI' [c:/Users/Sam/Desktop/ECE532/mid_demo_v6_timer_gtracker/mid_demo/mid_demo.srcs/sources_1/bd/mid_project/ipshared/450c/hdl/audio_axi_slave_v1_0_S00_AXI.v:4]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter ADDR_LSB bound to: 2 - type: integer 
+	Parameter OPT_MEM_ADDR_BITS bound to: 1 - type: integer 
+INFO: [Synth 8-226] default block is never used [c:/Users/Sam/Desktop/ECE532/mid_demo_v6_timer_gtracker/mid_demo/mid_demo.srcs/sources_1/bd/mid_project/ipshared/450c/hdl/audio_axi_slave_v1_0_S00_AXI.v:231]
+INFO: [Synth 8-226] default block is never used [c:/Users/Sam/Desktop/ECE532/mid_demo_v6_timer_gtracker/mid_demo/mid_demo.srcs/sources_1/bd/mid_project/ipshared/450c/hdl/audio_axi_slave_v1_0_S00_AXI.v:372]
+INFO: [Synth 8-6155] done synthesizing module 'audio_axi_slave_v1_0_S00_AXI' (1#1) [c:/Users/Sam/Desktop/ECE532/mid_demo_v6_timer_gtracker/mid_demo/mid_demo.srcs/sources_1/bd/mid_project/ipshared/450c/hdl/audio_axi_slave_v1_0_S00_AXI.v:4]
+INFO: [Synth 8-6157] synthesizing module 'audio_core' [c:/Users/Sam/Desktop/ECE532/mid_demo_v6_timer_gtracker/mid_demo/mid_demo.srcs/sources_1/bd/mid_project/ipshared/450c/src/audio_core.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pwm_gen' [c:/Users/Sam/Desktop/ECE532/mid_demo_v6_timer_gtracker/mid_demo/mid_demo.srcs/sources_1/bd/mid_project/ipshared/450c/src/pwm_gen.sv:1]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "block" *) [c:/Users/Sam/Desktop/ECE532/mid_demo_v6_timer_gtracker/mid_demo/mid_demo.srcs/sources_1/bd/mid_project/ipshared/450c/src/pwm_gen.sv:32]
+WARNING: [Synth 8-6014] Unused sequential element duty_level_reg was removed.  [c:/Users/Sam/Desktop/ECE532/mid_demo_v6_timer_gtracker/mid_demo/mid_demo.srcs/sources_1/bd/mid_project/ipshared/450c/src/pwm_gen.sv:112]
+INFO: [Synth 8-6155] done synthesizing module 'pwm_gen' (2#1) [c:/Users/Sam/Desktop/ECE532/mid_demo_v6_timer_gtracker/mid_demo/mid_demo.srcs/sources_1/bd/mid_project/ipshared/450c/src/pwm_gen.sv:1]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/Sam/Desktop/ECE532/mid_demo_v6_timer_gtracker/mid_demo/mid_demo.srcs/sources_1/bd/mid_project/ipshared/450c/src/audio_core.sv:69]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/Sam/Desktop/ECE532/mid_demo_v6_timer_gtracker/mid_demo/mid_demo.srcs/sources_1/bd/mid_project/ipshared/450c/src/audio_core.sv:115]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/Sam/Desktop/ECE532/mid_demo_v6_timer_gtracker/mid_demo/mid_demo.srcs/sources_1/bd/mid_project/ipshared/450c/src/audio_core.sv:197]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/Sam/Desktop/ECE532/mid_demo_v6_timer_gtracker/mid_demo/mid_demo.srcs/sources_1/bd/mid_project/ipshared/450c/src/audio_core.sv:220]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/Sam/Desktop/ECE532/mid_demo_v6_timer_gtracker/mid_demo/mid_demo.srcs/sources_1/bd/mid_project/ipshared/450c/src/audio_core.sv:243]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/Sam/Desktop/ECE532/mid_demo_v6_timer_gtracker/mid_demo/mid_demo.srcs/sources_1/bd/mid_project/ipshared/450c/src/audio_core.sv:93]
+INFO: [Synth 8-6155] done synthesizing module 'audio_core' (3#1) [c:/Users/Sam/Desktop/ECE532/mid_demo_v6_timer_gtracker/mid_demo/mid_demo.srcs/sources_1/bd/mid_project/ipshared/450c/src/audio_core.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'audio_axi_slave_v1_0' (4#1) [c:/Users/Sam/Desktop/ECE532/mid_demo_v6_timer_gtracker/mid_demo/mid_demo.srcs/sources_1/bd/mid_project/ipshared/450c/hdl/audio_axi_slave_v1_0.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'mid_project_audio_axi_slave_0_0' (5#1) [c:/Users/Sam/Desktop/ECE532/mid_demo_v6_timer_gtracker/mid_demo/mid_demo.srcs/sources_1/bd/mid_project/ip/mid_project_audio_axi_slave_0_0/synth/mid_project_audio_axi_slave_0_0.v:56]
+WARNING: [Synth 8-3331] design audio_axi_slave_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design audio_axi_slave_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design audio_axi_slave_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design audio_axi_slave_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design audio_axi_slave_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design audio_axi_slave_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 581.152 ; gain = 159.555
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 581.152 ; gain = 159.555
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 581.152 ; gain = 159.555
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 913.070 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 913.070 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.062 . Memory (MB): peak = 915.508 ; gain = 2.438
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:28 . Memory (MB): peak = 915.508 ; gain = 493.910
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:28 . Memory (MB): peak = 915.508 ; gain = 493.910
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:28 . Memory (MB): peak = 915.508 ; gain = 493.910
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [c:/Users/Sam/Desktop/ECE532/mid_demo_v6_timer_gtracker/mid_demo/mid_demo.srcs/sources_1/bd/mid_project/ipshared/450c/src/pwm_gen.sv:99]
+INFO: [Synth 8-5546] ROM "dir" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5547] Trying to map ROM "ram" into Block RAM due to explicit "ram_style" or "rom_style" specification
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'audio_core'
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  S_IDLE |                              000 |                              000
+                  S_MENU |                              001 |                              100
+                  S_GOOD |                              010 |                              010
+                   S_BAD |                              011 |                              011
+               S_VICTORY |                              100 |                              001
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'audio_core'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:28 . Memory (MB): peak = 915.508 ; gain = 493.910
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     22 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 2     
+	   2 Input      9 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 5     
+	               22 Bit    Registers := 1     
+	               17 Bit    Registers := 1     
+	               10 Bit    Registers := 3     
+	                9 Bit    Registers := 1     
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 3     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 10    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   4 Input     32 Bit        Muxes := 5     
+	   5 Input     22 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 1     
+	   5 Input      9 Bit        Muxes := 1     
+	  59 Input      5 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 3     
+	   6 Input      5 Bit        Muxes := 2     
+	  14 Input      5 Bit        Muxes := 1     
+	   5 Input      5 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 13    
+	   3 Input      1 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 6     
+	  59 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 1     
+	  14 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module audio_axi_slave_v1_0_S00_AXI 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 5     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   4 Input     32 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 5     
+Module pwm_gen 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 2     
++---Registers : 
+	               17 Bit    Registers := 1     
+	               10 Bit    Registers := 3     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+	   3 Input      1 Bit        Muxes := 1     
+Module audio_core 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     22 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 1     
++---Registers : 
+	               22 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
+	                5 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   5 Input     22 Bit        Muxes := 1     
+	   5 Input      9 Bit        Muxes := 1     
+	  59 Input      5 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 3     
+	   6 Input      5 Bit        Muxes := 2     
+	  14 Input      5 Bit        Muxes := 1     
+	   5 Input      5 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 6     
+	  59 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+	   6 Input      1 Bit        Muxes := 1     
+	  14 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5547] Trying to map ROM "p_0_out" into Block RAM due to explicit "ram_style" or "rom_style" specification
+INFO: [Synth 8-5546] ROM "inst/audio_core_1/pwm_gen_1/dir" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-3917] design mid_project_audio_axi_slave_0_0 has port aud_en driven by constant 1
+WARNING: [Synth 8-3331] design mid_project_audio_axi_slave_0_0 has unconnected port s00_axi_awprot[2]
+WARNING: [Synth 8-3331] design mid_project_audio_axi_slave_0_0 has unconnected port s00_axi_awprot[1]
+WARNING: [Synth 8-3331] design mid_project_audio_axi_slave_0_0 has unconnected port s00_axi_awprot[0]
+WARNING: [Synth 8-3331] design mid_project_audio_axi_slave_0_0 has unconnected port s00_axi_arprot[2]
+WARNING: [Synth 8-3331] design mid_project_audio_axi_slave_0_0 has unconnected port s00_axi_arprot[1]
+WARNING: [Synth 8-3331] design mid_project_audio_axi_slave_0_0 has unconnected port s00_axi_arprot[0]
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/audio_core_1/pwm_gen_1/incr_reg[3] )
+INFO: [Synth 8-3886] merging instance 'inst/audio_axi_slave_v1_0_S00_AXI_inst/axi_rresp_reg[0]' (FDRE) to 'inst/audio_axi_slave_v1_0_S00_AXI_inst/axi_rresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/audio_axi_slave_v1_0_S00_AXI_inst/axi_rresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'inst/audio_axi_slave_v1_0_S00_AXI_inst/axi_bresp_reg[0]' (FDRE) to 'inst/audio_axi_slave_v1_0_S00_AXI_inst/axi_bresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/audio_axi_slave_v1_0_S00_AXI_inst/axi_bresp_reg[1] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:31 . Memory (MB): peak = 915.508 ; gain = 493.910
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++--------------------------------+------------+---------------+----------------+
+|Module Name                     | RTL Object | Depth x Width | Implemented As | 
++--------------------------------+------------+---------------+----------------+
+|pwm_gen                         | p_0_out    | 32x32         | LUT            | 
+|mid_project_audio_axi_slave_0_0 | p_0_out    | 32x32         | LUT            | 
++--------------------------------+------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:38 . Memory (MB): peak = 915.508 ; gain = 493.910
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:38 . Memory (MB): peak = 915.508 ; gain = 493.910
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance 'inst/audio_core_1/pwm_gen_1/threshold_reg[13]' (FDR) to 'inst/audio_core_1/pwm_gen_1/duty_reg[6]'
+INFO: [Synth 8-3886] merging instance 'inst/audio_core_1/pwm_gen_1/threshold_reg[14]' (FDR) to 'inst/audio_core_1/pwm_gen_1/duty_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/audio_core_1/pwm_gen_1/threshold_reg[12]' (FDR) to 'inst/audio_core_1/pwm_gen_1/duty_reg[5]'
+INFO: [Synth 8-3886] merging instance 'inst/audio_core_1/pwm_gen_1/threshold_reg[15]' (FDR) to 'inst/audio_core_1/pwm_gen_1/duty_reg[8]'
+INFO: [Synth 8-3886] merging instance 'inst/audio_core_1/pwm_gen_1/threshold_reg[16]' (FDR) to 'inst/audio_core_1/pwm_gen_1/duty_reg[9]'
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:39 . Memory (MB): peak = 940.391 ; gain = 518.793
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:40 . Memory (MB): peak = 940.391 ; gain = 518.793
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:40 . Memory (MB): peak = 940.391 ; gain = 518.793
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:40 . Memory (MB): peak = 940.391 ; gain = 518.793
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:40 . Memory (MB): peak = 940.391 ; gain = 518.793
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:40 . Memory (MB): peak = 940.391 ; gain = 518.793
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:40 . Memory (MB): peak = 940.391 ; gain = 518.793
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |    28|
+|2     |LUT1   |    10|
+|3     |LUT2   |    56|
+|4     |LUT3   |    16|
+|5     |LUT4   |    71|
+|6     |LUT5   |    80|
+|7     |LUT6   |   150|
+|8     |FDRE   |   268|
+|9     |FDSE   |    12|
++------+-------+------+
+
+Report Instance Areas: 
++------+--------------------------------------+-----------------------------+------+
+|      |Instance                              |Module                       |Cells |
++------+--------------------------------------+-----------------------------+------+
+|1     |top                                   |                             |   691|
+|2     |  inst                                |audio_axi_slave_v1_0         |   691|
+|3     |    audio_axi_slave_v1_0_S00_AXI_inst |audio_axi_slave_v1_0_S00_AXI |   232|
+|4     |    audio_core_1                      |audio_core                   |   459|
+|5     |      pwm_gen_1                       |pwm_gen                      |   225|
++------+--------------------------------------+-----------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:40 . Memory (MB): peak = 940.391 ; gain = 518.793
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 6 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 940.391 ; gain = 184.438
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:40 . Memory (MB): peak = 940.391 ; gain = 518.793
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 28 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 940.391 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+55 Infos, 15 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:42 . Memory (MB): peak = 940.391 ; gain = 530.285
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 940.391 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Sam/Desktop/ECE532/mid_demo_v6_timer_gtracker/mid_demo/mid_demo.runs/mid_project_audio_axi_slave_0_0_synth_1/mid_project_audio_axi_slave_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP mid_project_audio_axi_slave_0_0, cache-ID = ce36da8e5d06202c
+INFO: [Coretcl 2-1174] Renamed 4 cell refs.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 940.391 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Sam/Desktop/ECE532/mid_demo_v6_timer_gtracker/mid_demo/mid_demo.runs/mid_project_audio_axi_slave_0_0_synth_1/mid_project_audio_axi_slave_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file mid_project_audio_axi_slave_0_0_utilization_synth.rpt -pb mid_project_audio_axi_slave_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Mar 21 13:55:39 2023...

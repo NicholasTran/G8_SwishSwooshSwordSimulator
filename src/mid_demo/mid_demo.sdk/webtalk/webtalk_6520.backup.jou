@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2018.3.1 (64-bit)
+# SW Build 2489853 on Tue Mar 26 04:20:25 MDT 2019
+# 
+# Start of session at: Thu Mar 23 13:26:39 2023
+# Process ID: 6520
+# Current directory: E:/mid_demo_v7/mid_demo_v7/mid_demo/mid_demo.sdk/webtalk
+# Command line: wbtcv.exe -mode batch -source sdk_webtalk.tcl
+# Log file: E:/mid_demo_v7/mid_demo_v7/mid_demo/mid_demo.sdk/webtalk/webtalk.log
+# Journal file: E:/mid_demo_v7/mid_demo_v7/mid_demo/mid_demo.sdk/webtalk\webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl
