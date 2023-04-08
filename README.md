@@ -16,11 +16,11 @@ Below are all the directories within the repository and descriptions of the dire
 
 G8_SwishSwooshSwordSimulator
 .
-├── docs/
+├── docs\
 │   ├── Presentation.pdf
 │   └── Final_Report.pdf          
 ├── images
-└── src/
+└── src\
     ├── ip_repo/
     │   ├── audio_axi_slave_1.0
     │   └── kb_slave_1.0
