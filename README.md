@@ -18,10 +18,10 @@ G8_SwishSwooshSwordSimulator\
 .\
 ├── docs\
 │   ├── Presentation.pdf\
-│   └── Final_Report.pdf\         
-├── images
+│   └── Final_Report.pdf\        
+├── images\
 └── src\
-    ├── ip_repo/
+    ├── ip_repo\
     │   ├── audio_axi_slave_1.0
     │   └── kb_slave_1.0
     ├── mid_demo/
