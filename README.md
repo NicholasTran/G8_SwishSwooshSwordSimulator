@@ -14,9 +14,14 @@ Swish Swoosh Sword Simulator is an interactive and fun game that uses motion con
 ## Repository Structure
 Below are all the directories within the repository and descriptions of the directories and any notable files within them.
 
-G8_SwishSwooshSwordSimulator
-[1.txt](https://github.com/NicholasTran/G8_SwishSwooshSwordSimulator/files/11182438/1.txt)
-
+G8_SwishSwooshSwordSimulator.
+├── build                   # Compiled files (alternatively `dist`)
+├── docs                    # Documentation files (alternatively `doc`)
+├── src                     # Source files (alternatively `lib` or `app`)
+├── test                    # Automated tests (alternatively `spec` or `tests`)
+├── tools                   # Tools and utilities
+├── LICENSE
+└── README.md
 
 ## Authors
 Gavin Gu, Harry Hopman, Nick Tran, Samuel Zheng
