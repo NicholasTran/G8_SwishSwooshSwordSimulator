@@ -16,9 +16,10 @@ Below are all the directories within the repository and descriptions of the dire
 
 ### G8_SwishSwooshSwordSimulator
     .
-    ├── docs/
-    │   ├── Presentation.pdf
-    │   └── Final_Report.pdf          
+    ├── docs/                                   
+    │   ├── Presentation.pdf                    #Project Documentation
+    │   ├── Final_Report.pdf
+    │   └── Video_demo.txt          
     ├── images
     ├── src/
     │   ├── ip_repo/
