@@ -17,40 +17,40 @@ Below are all the directories within the repository and descriptions of the dire
 ### G8_SwishSwooshSwordSimulator
     .
     ├── docs/                                   
-    │   ├── Presentation.pdf                    #Project Documentation
-    │   ├── Final_Report.pdf
-    │   └── Video_demo.txt          
-    ├── images
+    │   ├── Presentation.pdf                    # Final Project Presentation
+    │   ├── Final_Report.pdf                    # Final Report
+    │   └── Video_demo.txt                      # Link to Video Demo
+    ├── images                                  # Folder of image sprites used for on-screen objects
     ├── src/
-    │   ├── ip_repo/
-    │   │   ├── audio_axi_slave_1.0
-    │   │   └── kb_slave_1.0
+    │   ├── ip_repo/                            # Custom / Imported IP for Vivado
+    │   │   ├── audio_axi_slave_1.0             # Custom Audio IP
+    │   │   └── kb_slave_1.0                    # HID Keyboard IP
     │   ├── mid_demo/
-    │   │   ├── mid_demo.cache
-    │   │   ├── mid_demo.hw
-    │   │   ├── mid_demo.ip_user_files
-    │   │   ├── mid_demo.runs
-    │   │   ├── mid_demo.sdk/
+    │   │   ├── mid_demo.cache                  # Vivado Cache Files
+    │   │   ├── mid_demo.hw                     # Vivado Hardware Files
+    │   │   ├── mid_demo.ip_user_files          
+    │   │   ├── mid_demo.runs                   # Vivado Runs
+    │   │   ├── mid_demo.sdk/                   # Vivado SDK Folder
     │   │   │   ├── RemoteSystemsTempFiles
-    │   │   │   ├── main/
+    │   │   │   ├── main/                       # Main SDK Source Files
     │   │   │   │   └── src/
-    │   │   │   │       ├── colors.h
-    │   │   │   │       ├── draw_tools.c
-    │   │   │   │       ├── draw_tools.h
-    │   │   │   │       ├── helloworld.c
-    │   │   │   │       ├── lscript.ld
+    │   │   │   │       ├── colors.h            # Header File defining colors, on screen image bitmaps
+    │   │   │   │       ├── draw_tools.c        # Main Library for Drawing Functions
+    │   │   │   │       ├── draw_tools.h        # Header File for Drawing Library
+    │   │   │   │       ├── helloworld.c        # Main game loop w/ Motion detection
+    │   │   │   │       ├── lscript.ld          # Linker Script
     │   │   │   │       ├── platform.c
     │   │   │   │       ├── platform.h
     │   │   │   │       └── platform_config.h
-    │   │   │   ├── main_bsp/
-    │   │   │   │   ├── Makefile
+    │   │   │   ├── main_bsp/                   # Board Support Files
+    │   │   │   │   ├── Makefile                
     │   │   │   │   └── system.mss
     │   │   │   ├── mid_project_wrapper_hw_platform_1
-    │   │   │   └── mid_project_wrapper.hdf      
-    │   │   ├── mid_demo.srcs
+    │   │   │   └── mid_project_wrapper.hdf      # Hardware Description File
+    │   │   ├── mid_demo.srcs                    # Vivado Verilog Source Files
     │   │   ├── mid_demo.tmp
-    │   │   └── mid_demo.xpr
-    │   └── vivado-library-hotfix-PmodOLED_RGB
+    │   │   └── mid_demo.xpr                     # Vivado Project File
+    │   └── vivado-library-hotfix-PmodOLED_RGB   # Directory Containing PMOD NAV IP
     └── README.md
 
 ## Authors
