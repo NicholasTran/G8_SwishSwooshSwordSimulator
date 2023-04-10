@@ -25,6 +25,7 @@ Below are all the directories within the repository and descriptions of the dire
     │   ├── ip_repo/                            # Custom / Imported IP for Vivado
     │   │   ├── audio_axi_slave_1.0             # Custom Audio IP
     │   │   └── kb_slave_1.0                    # HID Keyboard IP
+    │   │   └── bluetooth_multi.ino             # Bluetooth Arduino Code
     │   ├── mid_demo/
     │   │   ├── mid_demo.cache                  # Vivado Cache Files
     │   │   ├── mid_demo.hw                     # Vivado Hardware Files
